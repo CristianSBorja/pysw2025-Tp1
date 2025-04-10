@@ -3,59 +3,67 @@
     background-color: #ddd;
     padding: 80px 20px;
     text-align: center;
-}
-
-.hero-secondary h1 {
+   }
+  
+   .hero-secondary h1 {
     font-size: 2.5em;
     margin-bottom: 10px;
-}
-
-.team-section {
+   }
+  
+   .team-section {
     max-width: 1200px;
     margin: 30px auto;
     padding: 20px;
-}
-
-.team-section h2 {
+   }
+  
+   .team-section h2 {
     font-size: 2em;
     text-align: center;
     margin-bottom: 20px;
-}
-
-.team-grid {
+   }
+  
+   .team-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
-}
-
-.trainer-card {
+   }
+  
+   .trainer-card {
     background-color: #ddd;
     border: 4px solid rgb(151, 6, 6);
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 2px 5px black(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     text-align: center;
-}
-
-.trainer-card img {
+    transition: all 0.3s ease-in-out;
+   }
+  
+   .trainer-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+   }
+  
+   .trainer-card img {
     width: 100%;
     height: auto;
     display: block;
-}
-
-.trainer-card h3 {
+    border-radius: 50%;
+    margin-bottom: 15px;
+   }
+  
+   .trainer-card h3 {
     padding: 15px;
     margin-bottom: 0;
     font-size: 1.5em;
-}
-
-.trainer-card p {
+   }
+  
+   .trainer-card p {
     padding: 0 19px 14px;
-    margin-bottom: 0;
+    margin-bottom: 10px;
     color: black;
-}
-
-.trainer-card a {
+   }
+  
+   .trainer-card a {
     display: block;
     background-color: rgb(151, 6, 6);
     color: white;
@@ -64,15 +72,136 @@
     text-align: center;
     transition: background-color 0.3s ease;
     font-weight: bold;
-}
-
-.trainer-card a:hover {
-    background-color: #0056b3;
-}
-
-/* Responsive para la sección de entrenadores */
-@media (max-width: 768px) {
-    .team-grid {
-        grid-template-columns: 1fr;
+    border-radius: 5px;
+    margin-top: 10px;
+   }
+  
+   .trainer-card a:hover {
+    background-color: #a71d2a;
+   }
+  
+   /* Estilos para la barra de habilidades */
+   .skill-bar {
+    margin-top: 15px;
+   }
+  
+   .skill-bar-title {
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-align: left;
+   }
+  
+   .skill-bar-outer {
+    background-color: #f0f0f0;
+    width: 100%;
+    height: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+   }
+  
+   .skill-bar-inner {
+    background-color: blue;
+    height: 100%;
+    border-radius: 10px;
+    width: 0;
+    /* Inicialmente 0 */
+    animation: fillSkillBar 1s ease-in-out forwards;
+    position: absolute;
+    left: 0;
+    top: 0;
+   }
+  
+   @keyframes fillSkillBar {
+    from {
+     width: 0;
     }
-}
+  
+    to {
+     width: var(--skill-percentage);
+    }
+   }
+  
+   /* Usar selectores de atributo para definir la variable --skill-percentage */
+   .skill-bar-inner[data-skill-percentage="90"] {
+    --skill-percentage: 90%;
+   }
+  
+   .skill-bar-inner[data-skill-percentage="85"] {
+    --skill-percentage: 85%;
+   }
+
+   .skill-bar-inner[data-skill-percentage="80"] {
+    --skill-percentage: 80%;
+   }
+  
+   .skill-bar-inner[data-skill-percentage="95"] {
+    --skill-percentage: 95%;
+   }
+   .skill-bar-inner[data-skill-percentage="70"] {
+    --skill-percentage: 70%;
+   }
+  
+   .skill-bar-inner[data-skill-percentage="50"] {
+    --skill-percentage: 50%;
+   }
+  
+   /* Más estilos para diferentes porcentajes */
+   .skill-percentage {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    font-size: 0.9em;
+    color: #333;
+    font-weight: bold;
+   }
+  
+   /* Estilos para el rating de estrellas */
+   .rating {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+   }
+  
+   .star {
+    width: 22px;
+    height: 22px;
+    background-color: #ccc;
+    -webkit-clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    margin-right: 5px;
+    display: inline-block;
+    transition: transform 0.2s ease-in-out;
+    /* Añadimos la transición */
+   }
+  
+   .star:hover {
+    transform: scale(1.2);
+    /* Aumentamos el tamaño al pasar el cursor */
+    cursor: pointer;
+    /* Cambiamos el cursor para indicar interactividad */
+   }
+  
+   .star.filled {
+    background-color: gold;
+   }
+  
+   .star.half {
+    background: linear-gradient(to right, gold 50%, #ccc 50%);
+    -webkit-clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+   }
+  
+   .rating-value {
+    margin-left: 5px;
+    font-weight: bold;
+    color: #333;
+   }
+  
+   /* Responsive para la sección de entrenadores */
+   @media (max-width: 768px) {
+    .team-grid {
+     grid-template-columns: 1fr;
+    }
+   }
