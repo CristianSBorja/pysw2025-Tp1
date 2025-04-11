@@ -1,332 +1,609 @@
-/* Estilos generales */
-body {
-    font-family: sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* styles.css */
 
-/* Header */
-header {
-    background-color: #333;
-    color: red;
-    padding: 14px 0;
-    font-weight: bold;
-}
-
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.logo {
-    font-size: 1.5em;
-    font-weight: bold;
-}
-
-.menu {
-    list-style: none;
-    display: flex;
-}
-
-.menu li {
-    margin-right: 20px;
-}
-
-.menu li a {
-    color: white;
-    text-decoration: none;
-    padding: 7px 12px;
-    font-weight: bold;
-}
-
-.menu li a:hover {
-    background-color: #555;
-}
-
-/* Mega-Menú */
-.menu > li {
-    position: relative; /* Necesario para posicionar el mega-menú absolutamente */
-}
-
-.mega-menu {
-    position: absolute;
-    left: 0;
-    top: 100%; /* Coloca el mega-menú debajo del elemento "Clases" */
-    background-color: #333;
-    padding: 20px;
-    display: none; /* Oculta el mega-menú por defecto */
-    z-index: 1000; /* Asegura que esté por encima de otros elementos */
-}
-
-.mega-menu-content {
-    display: flex;
-    gap: 20px; /* Espacio entre las columnas */
-}
-
-.mega-menu-column {
-    flex: 1;
-}
-
-.mega-menu-column h3 {
-    font-size: 1.2em;
-    margin-bottom: 10px;
-    border-bottom: 2px solid #ccc;
-    padding-bottom: 5px;
-}
-
-.mega-menu-column ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.mega-menu-column li {
-    padding: 5px 0;
-}
-
-.mega-menu-column li a {
-    color: white;
-    text-decoration: none;
-    display: block;
-    padding: 5px 0;
-    font-weight: bold;
-}
-
-.mega-menu-column li a:hover {
-    color: #007bff; /* Color al pasar el cursor */
-}
-
-/* Mostrar el mega-menú al pasar el cursor */
-.menu > li:hover .mega-menu {
-    display: block;
-}
-
-/* Hero Section */
-.hero {
-    position: relative;
-    height: 500px;
-    overflow: hidden;
-    color: white;
-    text-align: center;
-    font-weight: bold;
-}
-
-.hero video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
-}
-
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.overlay h1 {
-    font-size: 3em;
-    margin-bottom: 20px;
-}
-
-.cta-button {
-    background-color: #ff4500;
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-.cta-button:hover {
-    background-color: #d43a00;
-}
-
-/* Clases Destacadas */
-.clases-destacadas {
-    max-width: 1200px;
-    margin: 20px auto;
-    text-align: center;
-}
-
-.clases-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    margin-top: 20px;
-}
-
-.card {
-    background-color: #ddd;
-    border: 4px solid rgb(151, 6, 6);
-    border-radius: 5px;
-    overflow: hidden;
-    transition: transform 0.3s ease;
-}
-
-.card:hover {
-    transform: scale(1.05);
-}
-
-.card img {
-    width: 100%;
-    height: auto;
-}
-
-.card h3 {
-    margin: 10px;
-}
-
-.card p {
-    margin: 0 10px 10px;
-}
-
-.card a {
-    display: inline-block;
-    background-color: #007bff;
-    color: white;
-    padding: 5px 10px;
-    text-decoration: none;
-    border-radius: 5px;
-    margin-bottom: 10px;
-}
-
-.card a:hover {
-    background-color: #0056b3;
-}
-
-/* Contador */
-.contador {
-    text-align: center;
-    font-size: 2em;
-    font-weight: bold;
-    color: #ff4500;
-    margin-top: 20px;
-}
-
-/* Carrusel */
-.carrusel {
-    overflow: hidden;
-    width: 100%;
-    margin-top: 20px;
-}
-
-.carrusel-contenedor {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-    animation: carrusel 15s infinite alternate;
-}
-
-.testimonio {
-    min-width: 100%;
-    padding: 20px;
-    box-sizing: border-box;
-    text-align: center;
-}
-
-.testimonio p {
-    font-size: 1.2em;
-    margin-bottom: 10px;
-}
-
-.testimonio h4 {
-    font-size: 1em;
-    color: #555;
-}
-
-@keyframes carrusel {
-    0% { transform: translateX(0); }
-    20% { transform: translateX(0); }
-    25% { transform: translateX(-100%); }
-    45% { transform: translateX(-100%); }
-    50% { transform: translateX(-200%); }
-    70% { transform: translateX(-200%); }
-    75% { transform: translateX(-100%); }
-    95% { transform: translateX(-100%); }
-    100% { transform: translateX(0); }
-}
-
-/* Footer */
-footer {
-    background-color: #333;
-    color: white;
-    padding: 20px 0;
-    text-align: center;
-}
-
-.newsletter {
-    margin-bottom: 20px;
-}
-
-.newsletter input {
-    padding: 10px;
-    border-radius: 5px;
-    border: none;
-    margin-right: 10px;
-}
-
-.newsletter button {
-    background-color: #ff4500;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.newsletter button:hover {
-    background-color: #d43a00;
-}
-
-.redes-sociales {
-    margin-bottom: 20px;
-}
-
-.redes-sociales img {
-    width: 30px;
-    height: 30px;
-    margin: 0 10px;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    nav {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .menu {
-        margin-top: 10px;
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .menu li {
-        margin-right: 0;
-        margin-bottom: 10px;
-    }
-
-    .hero {
-        height: 400px;
-    }
-
-    .overlay h1 {
-        font-size: 2em;
-    }
-}
+/* --- Variables de Color para Dark Mode --- */
+:root {
+    /* Modo Claro (Default) */
+    --color-background: #ffffff;
+    --color-text: #333333;
+    --color-primary: rgb(151, 6, 6); /* Rojo principal */
+    --color-primary-alt: #ff4500; /* Naranja/Rojo secundario */
+    --color-primary-alt-hover: #d43a00;
+    --color-header-bg: #333333;
+    --color-header-text: red; /* Color original del logo/texto header */
+    --color-menu-link: white;
+    --color-menu-link-hover-bg: #555555;
+    --color-mega-menu-bg: #333333;
+    --color-mega-menu-link: white;
+    --color-mega-menu-link-hover: #007bff; /* Azul para hover en mega menu */
+    --color-mega-menu-border: #ccc;
+    --color-card-bg: #ddd;
+    --color-card-border: rgb(151, 6, 6);
+    --color-card-link-bg: #007bff;
+    --color-card-link-hover-bg: #0056b3;
+    --color-footer-bg: #333333;
+    --color-footer-text: white;
+    --color-overlay-bg: rgba(0, 0, 0, 0.5);
+    --color-overlay-text: white;
+    --color-button-primary-bg: var(--color-primary-alt); /* Botón CTA principal */
+    --color-button-primary-hover-bg: var(--color-primary-alt-hover);
+    --color-button-secondary-bg: var(--color-primary-alt); /* Botón Newsletter */
+    --color-button-secondary-hover-bg: var(--color-primary-alt-hover);
+    --color-contador-text: var(--color-primary-alt);
+    --color-testimonio-subtext: #555;
+    --color-input-bg: white; /* Fondo input newsletter */
+    --color-input-border: transparent; /* Borde input newsletter */
+    --color-text-light: #ffffff; /* Texto claro general */
+  
+    /* Transición suave entre modos */
+    --color-transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+  }
+  
+  body.dark-mode {
+    /* Modo Oscuro */
+    --color-background: #1a1a1a;
+    --color-text: #e0e0e0;
+    --color-primary: rgb(200, 50, 50); /* Rojo más brillante */
+    --color-primary-alt: #ff6347; /* Tomate/Naranja más brillante */
+    --color-primary-alt-hover: #e55337;
+    --color-header-bg: #111111;
+    --color-header-text: #ff4d4d; /* Rojo más brillante para logo */
+    --color-menu-link: #e0e0e0;
+    --color-menu-link-hover-bg: #444444;
+    --color-mega-menu-bg: #222222;
+    --color-mega-menu-link: #e0e0e0;
+    --color-mega-menu-link-hover: #4dabf7; /* Azul más brillante */
+    --color-mega-menu-border: #555;
+    --color-card-bg: #2c2c2c;
+    --color-card-border: rgb(200, 50, 50);
+    --color-card-link-bg: #4dabf7;
+    --color-card-link-hover-bg: #1a7fdb;
+    --color-footer-bg: #111111;
+    --color-footer-text: #e0e0e0;
+    --color-overlay-bg: rgba(0, 0, 0, 0.7);
+    --color-overlay-text: #f0f0f0;
+    --color-button-primary-bg: var(--color-primary-alt);
+    --color-button-primary-hover-bg: var(--color-primary-alt-hover);
+    --color-button-secondary-bg: var(--color-primary-alt);
+    --color-button-secondary-hover-bg: var(--color-primary-alt-hover);
+    --color-contador-text: var(--color-primary-alt);
+    --color-testimonio-subtext: #aaa;
+    --color-input-bg: #444; /* Fondo input oscuro */
+    --color-input-border: #666; /* Borde input oscuro */
+    --color-text-light: #ffffff;
+  }
+  
+  /* --- Estilos Generales Actualizados --- */
+  body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      background-color: var(--color-background); /* Aplicar color de fondo */
+      color: var(--color-text); /* Aplicar color de texto base */
+      transition: var(--color-transition); /* Transición general */
+  }
+  
+  /* Aplicar transición a elementos principales */
+  header, footer, main, section, .card, .class-card, .trainer-card, .pricing-card, button, a, input, textarea, select, table, .mega-menu, .overlay {
+      transition: var(--color-transition);
+  }
+  
+  
+  /* Header */
+  header {
+      background-color: var(--color-header-bg);
+      color: var(--color-header-text); /* Color del logo */
+      padding: 14px 0;
+      font-weight: bold;
+  }
+  
+  nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+  }
+  
+  .logo {
+      font-size: 1.5em;
+      font-weight: bold;
+      color: var(--color-header-text); /* Asegurar color del logo */
+  }
+  
+  .menu {
+      list-style: none;
+      display: flex;
+      padding-left: 0; /* Quitar padding por defecto */
+      margin: 0; /* Quitar margen por defecto */
+  }
+  
+  .menu li {
+      margin-right: 20px;
+  }
+  
+  .menu li a {
+      color: var(--color-menu-link);
+      text-decoration: none;
+      padding: 7px 12px;
+      font-weight: bold;
+      display: block; /* Para que el fondo cubra todo el padding */
+      border-radius: 3px; /* Pequeño redondeo opcional */
+  }
+  
+  .menu li a:hover {
+      background-color: var(--color-menu-link-hover-bg);
+      color: var(--color-menu-link); /* Mantener color de texto en hover */
+  }
+  
+  /* --- Estilos para el botón de cambio de tema --- */
+  #theme-toggle {
+      background: none;
+      border: none;
+      color: var(--color-menu-link); /* Usar color de link del menú */
+      font-size: 1.5em; /* Ajustar tamaño del icono */
+      cursor: pointer;
+      padding: 0 10px; /* Espacio alrededor */
+      margin-left: 10px; /* Separación del último item del menú */
+      line-height: 1; /* Alinear mejor el icono verticalmente */
+  }
+  
+  #theme-toggle:hover {
+      opacity: 0.8;
+  }
+  /* --- Fin estilos botón tema --- */
+  
+  
+  /* Mega-Menú */
+  .menu > li {
+      position: relative;
+  }
+  
+  .mega-menu {
+      position: absolute;
+      left: 0;
+      top: 100%;
+      background-color: var(--color-mega-menu-bg);
+      padding: 20px;
+      display: none;
+      z-index: 1000;
+      min-width: 400px; /* Ancho mínimo para que no sea muy estrecho */
+      border-radius: 0 0 5px 5px; /* Redondeo inferior */
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  }
+  
+  .mega-menu-content {
+      display: flex;
+      gap: 20px;
+  }
+  
+  .mega-menu-column {
+      flex: 1;
+  }
+  
+  .mega-menu-column h3 {
+      font-size: 1.2em;
+      margin-top: 0; /* Quitar margen superior */
+      margin-bottom: 10px;
+      border-bottom: 2px solid var(--color-mega-menu-border);
+      padding-bottom: 5px;
+      color: var(--color-menu-link); /* Usar color claro */
+  }
+  
+  .mega-menu-column ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+  }
+  
+  .mega-menu-column li {
+      padding: 0; /* Quitar padding extra */
+      margin-bottom: 5px; /* Espacio entre links */
+  }
+  
+  .mega-menu-column li a {
+      color: var(--color-mega-menu-link);
+      text-decoration: none;
+      display: block;
+      padding: 5px 0;
+      font-weight: normal; /* Puede ser normal aquí */
+      border-radius: 0; /* Sin redondeo interno */
+  }
+  
+  .mega-menu-column li a:hover {
+      color: var(--color-mega-menu-link-hover);
+      background-color: transparent; /* Sin fondo en hover interno */
+  }
+  
+  .menu > li:hover .mega-menu {
+      display: block;
+  }
+  
+  /* Hero Section */
+  .hero {
+      position: relative;
+      height: 500px;
+      overflow: hidden;
+      color: var(--color-overlay-text); /* Texto sobre overlay */
+      text-align: center;
+      font-weight: bold;
+  }
+  
+  .hero video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+  }
+  
+  .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: var(--color-overlay-bg);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+  }
+  
+  .overlay h1 {
+      font-size: 3em;
+      margin-bottom: 20px;
+      color: var(--color-overlay-text); /* Asegurar color */
+  }
+  .overlay p {
+      color: var(--color-overlay-text); /* Asegurar color */
+  }
+  
+  .cta-button { /* Botón principal en Hero */
+      background-color: var(--color-button-primary-bg);
+      color: var(--color-text-light);
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+      border: none; /* Asegurar que no tenga borde por defecto */
+      font-weight: bold;
+  }
+  
+  .cta-button:hover {
+      background-color: var(--color-button-primary-hover-bg);
+  }
+  
+  /* Clases Destacadas */
+  .clases-destacadas {
+      max-width: 1200px;
+      margin: 30px auto; /* Más margen */
+      padding: 0 20px; /* Padding lateral */
+      text-align: center;
+  }
+  
+  .clases-destacadas h2 {
+       color: var(--color-text); /* Asegurar color del título */
+       margin-bottom: 25px; /* Más espacio debajo del título */
+  }
+  
+  .clases-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+  }
+  
+  .card { /* Estilo base para tarjetas */
+      background-color: var(--color-card-bg);
+      border: 4px solid var(--color-card-border);
+      border-radius: 5px;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease; /* Añadir sombra a transición */
+      text-align: center; /* Centrar contenido */
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Sombra sutil */
+      color: var(--color-text); /* Color de texto dentro de la tarjeta */
+  }
+  
+  .card:hover {
+      transform: translateY(-5px); /* Levantar un poco */
+      box-shadow: 0 6px 12px rgba(0,0,0,0.15); /* Sombra más pronunciada */
+  }
+  
+  .card img {
+      width: 100%;
+      height: auto; /* Mantener proporción */
+      display: block; /* Quitar espacio extra debajo */
+  }
+  
+  .card h3 {
+      margin: 15px 10px 10px; /* Ajustar márgenes */
+      font-size: 1.3em; /* Tamaño título tarjeta */
+      color: var(--color-text); /* Asegurar color */
+  }
+  
+  .card p {
+      margin: 0 15px 15px; /* Ajustar márgenes */
+      font-size: 0.95em; /* Tamaño texto tarjeta */
+      line-height: 1.5; /* Espaciado línea */
+      color: var(--color-text); /* Asegurar color */
+  }
+  
+  .card a { /* Botón/link dentro de la tarjeta */
+      display: inline-block;
+      background-color: var(--color-card-link-bg);
+      color: var(--color-text-light);
+      padding: 8px 15px; /* Ajustar padding */
+      text-decoration: none;
+      border-radius: 5px;
+      margin-bottom: 15px; /* Espacio inferior */
+      font-size: 0.9em;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+      border: none;
+  }
+  
+  .card a:hover {
+      background-color: var(--color-card-link-hover-bg);
+  }
+  
+  /* Contador */
+  .contador {
+      text-align: center;
+      font-size: 2em;
+      font-weight: bold;
+      color: var(--color-contador-text);
+      margin-top: 40px; /* Más espacio arriba */
+      margin-bottom: 20px; /* Espacio abajo */
+      padding: 0 20px;
+  }
+  .contador p {
+      font-size: 0.6em; /* Más pequeño */
+      font-weight: normal;
+      color: var(--color-text); /* Usar color de texto normal */
+      margin-top: 5px;
+  }
+  
+  
+  /* Carrusel */
+  .carrusel {
+      overflow: hidden;
+      width: 100%;
+      margin-top: 20px;
+      background-color: var(--color-card-bg); /* Fondo ligero para destacar */
+      padding: 20px 0; /* Padding vertical */
+      border-top: 1px solid var(--color-mega-menu-border); /* Separador sutil */
+      border-bottom: 1px solid var(--color-mega-menu-border);
+  }
+  
+  .carrusel-contenedor {
+      display: flex;
+      /* La animación y transición se mantienen */
+      animation: carrusel 15s infinite alternate;
+      transition: transform 0.5s ease-in-out;
+  }
+  
+  .testimonio {
+      min-width: 100%;
+      padding: 20px 40px; /* Más padding horizontal */
+      box-sizing: border-box;
+      text-align: center;
+  }
+  
+  .testimonio p {
+      font-size: 1.2em;
+      margin-bottom: 10px;
+      font-style: italic; /* Estilo de cita */
+      color: var(--color-text);
+  }
+  
+  .testimonio h4 {
+      font-size: 1em;
+      color: var(--color-testimonio-subtext);
+      font-weight: bold;
+      font-style: normal;
+  }
+  
+  @keyframes carrusel {
+      0% { transform: translateX(0); }
+      20% { transform: translateX(0); }
+      25% { transform: translateX(-100%); }
+      45% { transform: translateX(-100%); }
+      50% { transform: translateX(-200%); }
+      70% { transform: translateX(-200%); }
+      75% { transform: translateX(-100%); } /* Vuelve al segundo */
+      95% { transform: translateX(-100%); }
+      100% { transform: translateX(0); } /* Vuelve al primero */
+  }
+  
+  /* Footer */
+  footer {
+      background-color: var(--color-footer-bg);
+      color: var(--color-footer-text);
+      padding: 30px 20px; /* Más padding */
+      text-align: center;
+      margin-top: 40px; /* Separación del contenido */
+  }
+  
+  footer h3 {
+      color: var(--color-footer-text); /* Asegurar color */
+      margin-top: 0;
+      margin-bottom: 15px;
+  }
+  
+  .newsletter {
+      margin-bottom: 30px; /* Más espacio */
+  }
+  
+  .newsletter form {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap; /* Para responsiveness */
+      gap: 10px;
+  }
+  
+  .newsletter input[type="email"] {
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid var(--color-input-border);
+      background-color: var(--color-input-bg);
+      color: var(--color-text); /* Color del texto dentro del input */
+      min-width: 250px; /* Ancho mínimo */
+  }
+  /* Placeholder color */
+  .newsletter input[type="email"]::placeholder {
+      color: var(--color-testimonio-subtext);
+      opacity: 1; /* Firefox */
+  }
+  .newsletter input[type="email"]:-ms-input-placeholder { /* IE 10-11 */
+     color: var(--color-testimonio-subtext);
+  }
+  .newsletter input[type="email"]::-ms-input-placeholder { /* Microsoft Edge */
+     color: var(--color-testimonio-subtext);
+  }
+  
+  
+  .newsletter button {
+      background-color: var(--color-button-secondary-bg);
+      color: var(--color-text-light);
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      font-weight: bold;
+  }
+  
+  .newsletter button:hover {
+      background-color: var(--color-button-secondary-hover-bg);
+  }
+  
+  .redes-sociales {
+      margin-bottom: 20px;
+  }
+  
+  .redes-sociales a {
+      display: inline-block; /* Para aplicar margen */
+      margin: 0 10px;
+  }
+  
+  .redes-sociales img {
+      width: 30px;
+      height: 30px;
+      vertical-align: middle; /* Alinear mejor */
+      opacity: 0.8;
+      transition: opacity 0.3s ease;
+  }
+  .redes-sociales a:hover img {
+      opacity: 1;
+  }
+  
+  /* Estilos para el iframe y texto del footer */
+  footer div:has(> iframe) { /* Selector para el div que contiene el iframe */
+      margin-bottom: 15px;
+  }
+  footer iframe {
+      max-width: 100%; /* Hacer el mapa responsive */
+      height: 250px; /* Altura fija o ajustar según necesidad */
+      border-radius: 5px;
+  }
+  footer p {
+      margin: 8px 0;
+      font-size: 0.9em;
+      color: var(--color-footer-text);
+      opacity: 0.8; /* Ligeramente más tenue */
+  }
+  
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+      nav {
+          flex-direction: row; /* Mantener en fila pero permitir wrap */
+          flex-wrap: wrap; /* Permitir que el botón pase abajo si no cabe */
+          justify-content: space-between; /* Espacio entre logo y (menu+botón) */
+          align-items: center; /* Centrar verticalmente */
+      }
+  
+      .menu {
+          margin-top: 10px;
+          flex-direction: row; /* Mantener menú en fila */
+          flex-wrap: wrap; /* Permitir que items pasen abajo */
+          justify-content: center; /* Centrar items del menú */
+          width: 100%; /* Ocupar todo el ancho para centrar */
+          order: 3; /* Poner menú debajo del logo y botón en wrap */
+      }
+  
+      .menu li {
+          margin-right: 10px; /* Menos margen */
+          margin-bottom: 10px;
+      }
+  
+      #theme-toggle {
+          order: 2; /* Poner botón después del logo */
+          margin-left: auto; /* Empujar a la derecha */
+      }
+  
+      /* Mega menú en móvil: considerar hacerlo desplegable con click o un estilo diferente */
+      .mega-menu {
+          position: static; /* Quitar posicionamiento absoluto */
+          display: none; /* Oculto por defecto, necesitaría JS para toggle */
+          width: 100%;
+          box-shadow: none;
+          border-radius: 0;
+          margin-top: 10px;
+          background-color: var(--color-header-bg); /* Mismo fondo que header */
+      }
+      .mega-menu-content {
+          flex-direction: column; /* Apilar columnas */
+          gap: 15px;
+      }
+      .menu > li:hover .mega-menu {
+          display: none; /* Desactivar hover en móvil (mejor con JS) */
+      }
+       /* --- Fin ajustes mega menú móvil --- */
+  
+  
+      .hero {
+          height: 400px;
+      }
+  
+      .overlay h1 {
+          font-size: 2em;
+      }
+      .overlay p {
+          font-size: 1em;
+          padding: 0 15px; /* Evitar que toque los bordes */
+      }
+  
+      .clases-grid {
+          grid-template-columns: 1fr; /* Una columna en móvil */
+      }
+  
+      .contador {
+          font-size: 1.8em;
+      }
+  
+      .newsletter form {
+          flex-direction: column; /* Apilar input y botón */
+          align-items: stretch; /* Estirar elementos */
+      }
+      .newsletter input[type="email"] {
+          min-width: auto; /* Quitar ancho mínimo */
+          width: 90%; /* Ancho casi completo */
+          margin: 0 auto 10px; /* Centrar y espacio inferior */
+      }
+      .newsletter button {
+          width: 90%; /* Ancho casi completo */
+          margin: 0 auto; /* Centrar */
+      }
+  
+      footer iframe {
+          height: 200px; /* Menos altura en móvil */
+      }
+  }
+  
+  
