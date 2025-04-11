@@ -6,6 +6,8 @@
     <title>IMPERIO-FIT - Blog Fitness</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="blog.css">
+    <link rel="stylesheet" href="newspaper.css">
+    <link rel="stylesheet" href="comments.css">
 </head>
 <body>
     <header>
@@ -65,7 +67,7 @@
         </nav>
     </header>
 
-    <main>
+    <main class="blog-page">
         <section class="hero">
             <video autoplay loop muted playsinline>
                 <source src="assets/video.mp4" type="video/mp4">
@@ -77,52 +79,118 @@
             </div>
         </section>
 
-        <div class="blog-container">
+        <div class="blog-container newspaper-layout">
             <aside class="blog-sidebar">
-                <div class="categories">
+                <div class="categories filter-section">
                     <h3>Categorías</h3>
                     <ul>
-                        <li><a href="#">Nutrición</a></li>
-                        <li><a href="#">Entrenamiento</a></li>
-                        <li><a href="#">Salud Mental</a></li>
-                        <li><a href="#">Consejos para Principiantes</a></li>
+                        <li><a href="#" data-category="all">Todas</a></li>
+                        <li><a href="#" data-category="nutricion">Nutrición</a></li>
+                        <li><a href="#" data-category="entrenamiento">Entrenamiento</a></li>
+                        <li><a href="#" data-category="salud-mental">Salud Mental</a></li>
+                        <li><a href="#" data-category="principiantes">Consejos para Principiantes</a></li>
                     </ul>
                 </div>
-                <div class="tags">
+                <div class="tags filter-section">
                     <h3>Tags</h3>
                     <ul>
-                        <li><a href="#">#RecetasSaludables</a></li>
-                        <li><a href="#">#RutinasDeEjercicio</a></li>
-                        <li><a href="#">#Bienestar</a></li>
-                        <li><a href="#">#Motivación</a></li>
+                        <li><a href="#" data-tag="all">Todos</a></li>
+                        <li><a href="#" data-tag="recetas-saludables">#RecetasSaludables</a></li>
+                        <li><a href="#" data-tag="rutinas-ejercicio">#RutinasDeEjercicio</a></li>
+                        <li><a href="#" data-tag="bienestar">#Bienestar</a></li>
+                        <li><a href="#" data-tag="motivacion">#Motivación</a></li>
+                        <li><a href="#" data-tag="fuerza">#EntrenamientoDeFuerza</a></li>
+                        <li><a href="#" data-tag="desayunos">#DesayunosSaludables</a></li>
                     </ul>
                 </div>
             </aside>
 
             <section class="blog-articles">
                 <h2>Últimas Entradas</h2>
-                <article class="blog-post">
+                <article class="blog-post" data-category="entrenamiento" data-tags="entrenamiento-de-fuerza,fuerza">
                     <img src="assets/blog_img1.jpg" alt="Artículo 1">
                     <h3><a href="#">Los Beneficios del Entrenamiento de Fuerza para la Salud de mayores de edad</a></h3>
                     <p class="post-meta">Publicado el 5 de abril de 2025 por Chris Bunsted</p>
                     <p>El entrenamiento de fuerza es un tipo de ejercicio que utiliza la resistencia para desarrollar la fuerza y la resistencia muscular. Puede realizarse mediante ejercicios con el peso del cuerpo, pesas libres o máquinas de pesas. El entrenamiento de fuerza en adultos mayores....</p>
                     <a href="#" class="read-more">Leer más</a>
+                    <div class="comments-section">
+                        <h3>Comentarios (2)</h3>
+                        <ul class="comment-list">
+                            <li class="comment">
+                                <div class="avatar" data-author="Usuario1"></div>
+                                <div class="comment-content">
+                                    <strong class="comment-author">Usuario1</strong>
+                                    <p>Excelente artículo, muy informativo!</p>
+                                    <span class="comment-date">Hace 2 días</span>
+                                </div>
+                            </li>
+                            <li class="comment">
+                                <div class="avatar" data-author="OtroUsuario"></div>
+                                <div class="comment-content">
+                                    <strong class="comment-author">OtroUsuario</strong>
+                                    <p>Gracias por compartir esta información.</p>
+                                    <span class="comment-date">Ayer</span>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="add-comment">
+                            <h3>Deja un comentario</h3>
+                            <form>
+                                <input type="text" placeholder="Nombre">
+                                <textarea placeholder="Comentario"></textarea>
+                                <button type="submit">Publicar Comentario</button>
+                            </form>
+                        </div>
+                    </div>
                 </article>
 
-                <article class="blog-post">
+                <article class="blog-post" data-category="nutricion" data-tags="recetas-saludables,desayunos">
                     <img src="assets/blog_img2.jpg" alt="Artículo 2">
                     <h3><a href="#">5 Ideas de Desayunos Saludables y Energéticos</a></h3>
                     <p class="post-meta">Publicado el 2 de abril de 2025 por Sol Perez</p>
                     <p>Lo más sano para desayunar es tomar alimentos de gran calidad nutricional que cubran las necesidades de proteínas, hidratos de carbono y grasas, como que aporten las vitaminas y los minerales que se necesitan para afrontar el día. Hoy te traemos 40 recetas de desayunos saludables, fáciles y muy ricos. ¡Sigue leyendo!...</p>
                     <a href="#" class="read-more">Leer más</a>
+                    <div class="comments-section">
+                        <h3>Comentarios (1)</h3>
+                        <ul class="comment-list">
+                            <li class="comment">
+                                <div class="avatar" data-author="FanFitness"></div>
+                                <div class="comment-content">
+                                    <strong class="comment-author">FanFitness</strong>
+                                    <p>Me encantan estas ideas para el desayuno!</p>
+                                    <span class="comment-date">Hoy</span>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="add-comment">
+                            <h3>Deja un comentario</h3>
+                            <form>
+                                <input type="text" placeholder="Nombre">
+                                <textarea placeholder="Comentario"></textarea>
+                                <button type="submit">Publicar Comentario</button>
+                            </form>
+                        </div>
+                    </div>
                 </article>
 
-                <article class="blog-post">
+                <article class="blog-post" data-category="entrenamiento,salud-mental" data-tags="motivacion">
                     <img src="assets/blog_img3.jpg" alt="Artículo 3">
                     <h3><a href="#">Cómo Mantener la Motivación para Alcanzar tus Objetivos Fitness</a></h3>
                     <p class="post-meta">Publicado el 28 de marzo de 2025 por Alejandro Gudiño</p>
                     <p>En la búsqueda de un estilo de vida saludable, encontrar la motivación para ir al gimnasio puede ser un desafío constante. ¡Pero no te preocupes! Aquí te comparto 10 consejos que te ayudarán a encender esa chispa interior y mantenerte enfocado en tus objetivos de fitness. Desde la creación de metas realistas hasta la importancia de la variedad en tu rutina de ejercicios, este texto te guiará en el camino....</p>
                     <a href="#" class="read-more">Leer más</a>
+                    <div class="comments-section">
+                        <h3>Comentarios (0)</h3>
+                        <p>Aún no hay comentarios. ¡Sé el primero en comentar!</p>
+                        <div class="add-comment">
+                            <h3>Deja un comentario</h3>
+                            <form>
+                                <input type="text" placeholder="Nombre">
+                                <textarea placeholder="Comentario"></textarea>
+                                <button type="submit">Publicar Comentario</button>
+                            </form>
+                        </div>
+                    </div>
                 </article>
 
                 <div class="pagination">
@@ -152,15 +220,50 @@
         </div>
         <div>
             <iframe
-              src="https://www.openstreetmap.org/export/embed.html?bbox=-58.45%2C-34.61%2C-58.43%2C-34.60&layer=mapnik"
-              width="500"
-              height="300"
-              style="border: 0"
+                src="https://www.openstreetmap.org/export/embed.html?bbox=-65.30081,-24.18335,-65.29081,-24.17335&layer=mapnik"
+                width="500"
+                height="300"
+                style="border: 0"
             ></iframe>
-          </div>
+        </div>
             <p>Gral. Belgrano 1253, Y4600 San Salvador de Jujuy, Jujuy</p>
             <p>&copy; 2025 Mi sitio web. Todos los derechos reservados.</p>
-             <p>Cristian Borja LU:3664</p>
+            <p>Cristian Borja LU:3664</p>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const filterSections = document.querySelectorAll('.filter-section');
+            const blogPosts = document.querySelectorAll('.blog-post');
+
+            filterSections.forEach(section => {
+                section.addEventListener('click', (event) => {
+                    if (event.target.tagName === 'A') {
+                        event.preventDefault();
+                        const filterValue = event.target.dataset[Object.keys(event.target.dataset)[0]];
+
+                        blogPosts.forEach(post => {
+                            const category = post.dataset.category;
+                            const tags = post.dataset.tags ? post.dataset.tags.split(',') : [];
+
+                            const matchesCategory = filterValue === 'all' || category === filterValue;
+                            const matchesTag = filterValue === 'all' || tags.includes(filterValue);
+
+                            if (section.classList.contains('categories')) {
+                                post.style.display = matchesCategory ? 'grid' : 'none';
+                            } else if (section.classList.contains('tags')) {
+                                post.style.display = matchesTag ? 'grid' : 'none';
+                            }
+                        });
+                    }
+                });
+            });
+
+            // Inicialmente mostrar todos los posts
+            blogPosts.forEach(post => {
+                post.style.display = 'grid';
+            });
+        });
+    </script>
 </body>
 </html>
