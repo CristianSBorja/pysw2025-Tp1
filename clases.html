@@ -79,11 +79,21 @@
 
         <section class="classes-filter">
             <h2>Filtrar Clases</h2>
-            <form>
-                <label><input type="checkbox" name="filter" value="musculacion"> Musculación</label>
-                <label><input type="checkbox" name="filter" value="crossfit"> CrossFit</label>
-                <label><input type="checkbox" name="filter" value="yoga"> Yoga</label>
-                </form>
+            <!-- Envuelve los radios en un div para facilitar la selección -->
+            <div id="filter-options">
+                <label>
+                    <input type="radio" name="filter" value="all" checked> Todas
+                </label>
+                <label>
+                    <input type="radio" name="filter" value="musculacion"> Musculación
+                </label>
+                <label>
+                    <input type="radio" name="filter" value="crossfit"> CrossFit
+                </label>
+                <label>
+                    <input type="radio" name="filter" value="yoga"> Yoga
+                </label>
+            </div>
         </section>
 
         <section class="classes-grid-section">
@@ -198,7 +208,35 @@
     </footer>
 
     <script>
-        // Aquí iría el JavaScript para el filtrado de clases (si se implementa con JS)
+         document.addEventListener('DOMContentLoaded', () => {
+        // Selecciona el contenedor de los radio buttons y las tarjetas de clase
+        const filterOptions = document.getElementById('filter-options');
+        const classCards = document.querySelectorAll('.class-card');
+
+        // Función para filtrar las clases
+        function filterClasses() {
+            // Obtiene el valor del radio button seleccionado
+            const selectedFilter = document.querySelector('input[name="filter"]:checked').value;
+
+            // Recorre cada tarjeta de clase
+            classCards.forEach(card => {
+                // Comprueba si la tarjeta debe mostrarse
+                // Muestra si el filtro es 'all' O si la tarjeta contiene la clase del filtro seleccionado
+                if (selectedFilter === 'all' || card.classList.contains(selectedFilter)) {
+                    card.style.display = 'block'; // O 'grid', 'flex', etc., según tu CSS
+                } else {
+                    card.style.display = 'none'; // Oculta la tarjeta si no coincide
+                }
+            });
+        }
+
+        // Añade un event listener al contenedor de los filtros
+        // Escucha el evento 'change' que se dispara cuando se selecciona un radio button
+        filterOptions.addEventListener('change', filterClasses);
+
+        // Llama a la función una vez al cargar la página para establecer el estado inicial
+        filterClasses();
+        });
     </script>
 </body>
 </html>
