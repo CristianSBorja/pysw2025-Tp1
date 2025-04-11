@@ -50,9 +50,11 @@
 }
 
 .classes-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
+    display: flex; /* Cambiado de grid a flex */
+    flex-wrap: wrap; /* Permite que los elementos pasen a la siguiente línea */
+    justify-content: center; /* Centra los elementos horizontalmente */
+    gap: 20px; /* Mantiene el espacio entre tarjetas */
+    padding: 0 10px; /* Añade un poco de padding por si acaso */
 }
 
 .class-card {
@@ -63,6 +65,9 @@
     box-shadow: 0 5px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
     transition: all 0.3s ease-in-out;
+    flex-basis: 300px;
+    flex-grow: 0;
+
 }
 
 .class-card:hover {
